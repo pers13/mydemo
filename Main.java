@@ -29,6 +29,15 @@ public class Main {
             case 8 -> "VIII";
             case 9 -> "IX";
             case 10 -> "X";
+            case 20 -> "XX";
+            case 30 -> "XXX";
+            case 40 -> "XL";
+            case 50 -> "L";
+            case 60 -> "LX";
+            case 70 -> "LXX";
+            case 80 -> "LXX";
+            case 90 -> "XC";
+            case 100 -> "C";
             default -> null;
         };
     }
@@ -70,7 +79,11 @@ public class Main {
                 b = number(strings[2]);
                 int c = operation(a,b,strings[1]);
                 if (c>0) {
-                    return numberReverse(c);
+                    if ((c<10)||(c%10==0)) {
+                        return numberReverse(c);
+                    } else {
+                        return numberReverse((c/10)*10)+numberReverse(c%10);
+                    }
                 } else {
                     try {
                         throw new Exception("Result is lower than 1");
@@ -98,7 +111,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         Scanner in = new Scanner(System.in);
         String test = in.nextLine();
-        if(test.equals("")) {
+        if(test.isEmpty()) {
             throw new Exception("String is empty");
         } else {
             try {
