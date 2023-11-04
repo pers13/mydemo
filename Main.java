@@ -35,7 +35,7 @@ public class Main {
             case 50 -> "L";
             case 60 -> "LX";
             case 70 -> "LXX";
-            case 80 -> "LXX";
+            case 80 -> "LXXX";
             case 90 -> "XC";
             case 100 -> "C";
             default -> null;
